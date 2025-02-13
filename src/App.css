@@ -23,14 +23,7 @@ body {
 
 
 
-.boxPic {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
 
-.boxPic:hover {
-  transform: scale(1.05);
-}
 .signup-content {
   display: flex;
   flex-direction: column;
@@ -593,12 +586,20 @@ main.container {
 }
 /*boxing phot styles*/
 .boxPic {
-  display: flex-center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  display: flex;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
   border-radius: 20px;
 }
+
+.boxPic:hover {
+  transform: scale(1.05);
+}
+
+
 
 .carousel .slide img {
   transition: opacity 0.5s ease-in-out;
@@ -675,13 +676,6 @@ body {
 
 
 /*boxing phot styles*/
-.boxPic {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
-  border-radius: 20px;
-}
 
 .boxcard-content {
   display: flex;

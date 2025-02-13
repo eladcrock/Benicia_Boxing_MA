@@ -80,10 +80,14 @@ function AppContent() {
 
   useEffect(() => {
     AOS.init({
-      duration: 1000, // Animation duration
-      once: true, // Whether animation should happen only once - while scrolling down
+      duration: 1000,
+      once: true,
     });
+    return () => {
+      AOS.refresh(); // or AOS.destroy() if you want to clean up.
+    };
   }, []);
+  
 
   return (
     <>
