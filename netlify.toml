@@ -2,3 +2,11 @@
   from = "/*"
   to = "/Home"
   status = 200
+
+[build]
+  publish = "build"         # or "dist", depending on your output folder
+  command = "npm run build" # Adjust if you're using a different build command (like yarn)
+
+[dev]
+  command = "npm run dev"   # Command to run local development (optional, use only if needed)
+  port = 3000               # Set this to the port for your local dev server

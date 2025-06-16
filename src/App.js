@@ -65,6 +65,8 @@ import {
 import Follow from "./components/follow.js";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { useBlob } from "./useBlob";
+
 
 function AppContent() {
   const location = useLocation();
@@ -73,6 +75,11 @@ function AppContent() {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const arnisHeaderBlob = useBlob("/images/arnisHeader.mov");
+  const aboutHeaderBlob = useBlob("/images/about.mp4");
+  const kenpoHeaderBlob = useBlob("/images/kenpoHeader.mp4");
+  const boxingHeaderBlob = useBlob("/images/boxingHeader.mp4");
+
 
   useEffect(() => {
     console.log("Current path:", location.pathname);
@@ -259,33 +266,27 @@ function AppContent() {
           </div>
         )}
 
-        {["/arnis", "/Arnis"].includes(location.pathname) && (
-          <div id="arnisShowcase">
-            <video autoPlay loop muted playsInline>
-              <source src="/images/arnisHeader.mov" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        )}
 
         {location.pathname === "/facility" && (
           <div id="facilityShowcase" data-aos="fade-in">
             <p></p>
           </div>
         )}
+
         {location.pathname === "/about" && (
           <div id="aboutShowcase">
             <video autoPlay loop muted playsInline>
-              <source src="/images/about.mp4" type="video/mp4" />
+              <source src={aboutHeaderBlob || "/images/about.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p></p>
           </div>
         )}
+
         {["/karate", "/Karate"].includes(location.pathname) && (
           <div id="kenpoShowcase">
             <video autoPlay loop muted playsInline>
-              <source src="/images/kenpoHeader.mp4" type="video/mp4" />
+              <source src={kenpoHeaderBlob || "/images/kenpoHeader.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
@@ -294,12 +295,13 @@ function AppContent() {
         {location.pathname === "/boxing" && (
           <div id="boxShowcase">
             <video autoPlay loop muted playsInline>
-              <source src="/images/boxingHeader.mp4" type="video/mp4" />
+              <source src={boxingHeaderBlob || "/images/boxingHeader.mp4"} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p></p>
           </div>
         )}
+
         {location.pathname === "/contact" && (
           <div id="contactShowcase" data-aos="fade-in">
             <p></p>
