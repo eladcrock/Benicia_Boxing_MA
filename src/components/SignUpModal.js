@@ -9,7 +9,7 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import emailjs from "emailjs-com";
+import emailjs from '@emailjs/browser';
 
 const style = {
   position: 'absolute',
