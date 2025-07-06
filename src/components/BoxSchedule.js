@@ -16,7 +16,7 @@ function BoxSchedule() {
       <div className="schedule-fees-container">
         <div className="schedule-column">
           <h2>Membership Fees</h2>
-          <p> <strong>$120 Monthly </strong></p> 
+          <p> <strong>$140 Monthly </strong></p> 
     
           <p> Morning and Evening classes</p>
             <p>Weekdays and Weekends</p>

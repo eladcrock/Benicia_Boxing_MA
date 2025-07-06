@@ -1,6 +1,5 @@
 import React from 'react';
 import ArnisSchedule from "./ArnisSchedule.js";
-import Divider from '@mui/material/Divider';
 import MelImage from "../images/arnisLogo.png";
 import StudentImage from "../images/arnis2.jpg";
 import Card from '@mui/material/Card';  

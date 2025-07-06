@@ -10,7 +10,6 @@ import "../App.css";
 import ken4 from "../images/ken4.jpg";
 import ken13 from "../images/ken13.jpg";
 import KenSchedule from "./KenSchedule";
-import Follow from "./follow";
 
 function Karate() {
   return (

@@ -76,13 +76,13 @@ function Boxing() {
         transitionTime={500} // Add transition time for smoother transitions
       >
         <Card>
-          <img src={box1} alt="Image 1" className="boxPic" />
+          <img src={box1} alt=" 1" className="boxPic" />
         </Card>
         <Card>
-          <img src={box2} alt="Image 2" className="boxPic" />
+          <img src={box2} alt=" 2" className="boxPic" />
         </Card>
         <Card>
-          <img src={box3} alt="Image 3" className="boxPic" />
+          <img src={box3} alt=" 3" className="boxPic" />
         </Card>
       </Carousel>
 
@@ -101,7 +101,7 @@ function Boxing() {
       <BenBox data-aos="fade-in"></BenBox>
       <BoxSchedule data-aos="fade-in"></BoxSchedule>
       <Card>
-      <img src={boxM} alt="Image 1" className="boxPic" />
+      <img src={boxM} alt=" 1" className="boxPic" />
 
         </Card>
         <Follow/>

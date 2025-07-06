@@ -81,7 +81,7 @@ function Contact() {
           {" "}
           <div className="clock">Monday - Friday: </div>
         </strong>{" "}
-        9:00am - 10:00pm
+        10:00am - 10:00pm
       </Box>
       <Box
         display="flex"

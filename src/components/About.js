@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import ken5 from "../images/ken5.jpg";
 import Testimonial from "./Testimonial";
 import "./testimonial.css";
-import LazyLoad from "react-lazyload";
 import { Card, CardMedia, CardHeader } from "@mui/material";
 import box8 from "../images/box8.jpg";
 
