@@ -66,27 +66,6 @@ import {
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-function useLazyBlob(url, shouldLoad = false) {
-  const [blobUrl, setBlobUrl] = useState(null);
-
-  useEffect(() => {
-    if (!shouldLoad) return;
-    let alive = true;
-
-    fetch(url)
-      .then((r) => r.blob())
-      .then((b) => {
-        if (alive) setBlobUrl(URL.createObjectURL(b));
-      });
-
-    return () => {
-      alive = false;
-    };
-  }, [url, shouldLoad]);
-
-  return blobUrl ?? url;
-}
-
 function AppContent() {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,11 +74,6 @@ function AppContent() {
   const isKarate = ["/karate", "/Karate"].includes(location.pathname);
   const isBoxing = location.pathname === "/boxing";
   const isArnis = ["/arnis", "/Arnis"].includes(location.pathname);
-
-  const aboutHeaderBlob = useLazyBlob("/images/about.mp4", isAbout);
-  const kenpoHeaderBlob = useLazyBlob("/images/kenpoHeader.mp4", isKarate);
-  const boxingHeaderBlob = useLazyBlob("/images/boxingHeader.mp4", isBoxing);
-  const arnisHeaderBlob = useLazyBlob("/images/arnisHeader.mov", isArnis);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -158,6 +132,10 @@ function AppContent() {
                       component={Link}
                       to={path}
                       onClick={toggleMenu}
+                      style={{
+                        textDecoration: "none", // Remove underline
+                        color: "black", // Ensure consistent color
+                      }}
                     >
                       <ListItemText primary={text} />
                     </ListItem>
@@ -206,32 +184,32 @@ function AppContent() {
 
         {isAbout && (
           <div id="aboutShowcase">
-            <video autoPlay loop muted playsInline poster="/images/aboutPoster.jpg">
-              <source src={aboutHeaderBlob} type="video/mp4" />
+            <video autoPlay loop muted playsInline loading="lazy" poster="/images/aboutPoster.jpg">
+              <source src="/images/about.mp4" type="video/mp4" />
             </video>
           </div>
         )}
 
         {isKarate && (
           <div id="kenpoShowcase">
-            <video autoPlay loop muted playsInline poster="/images/kenpoPoster.jpg">
-              <source src={kenpoHeaderBlob} type="video/mp4" />
+            <video autoPlay loop muted playsInline loading="lazy" poster="/images/kenpoPoster.jpg">
+              <source src="/images/kenpoHeader.mp4" type="video/mp4" />
             </video>
           </div>
         )}
 
         {isBoxing && (
           <div id="boxShowcase">
-            <video autoPlay loop muted playsInline poster="/images/boxingPoster.jpg">
-              <source src={boxingHeaderBlob} type="video/mp4" />
+            <video autoPlay loop muted playsInline loading="lazy" poster="/images/boxingPoster.jpg">
+              <source src="/images/boxingHeader.mp4" type="video/mp4" />
             </video>
           </div>
         )}
 
         {isArnis && (
           <div id="arnisShowcase">
-            <video autoPlay loop muted playsInline poster="/images/arnisPoster.jpg">
-              <source src={arnisHeaderBlob} type="video/mp4" />
+            <video autoPlay loop muted playsInline loading="lazy" poster="/images/arnisPoster.jpg">
+              <source src="/images/arnisHeader.mov" type="video/mp4" />
             </video>
           </div>
         )}
